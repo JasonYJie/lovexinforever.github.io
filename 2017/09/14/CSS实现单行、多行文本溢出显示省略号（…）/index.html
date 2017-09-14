@@ -61,7 +61,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="墨竹寒舍,一知半解,总有刁民想害朕" />
+  <meta name="keywords" content="CSS3,CSS,HTML5,单行显示," />
 
 
 
@@ -77,17 +77,21 @@
 
 
 
-<meta name="description" content="一个简简单单的程序猿">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于我">
-<meta property="og:url" content="https://lovexinforever.github.io/about/index.html">
+<meta name="description" content="如果实现单行文本的溢出显示省略号同学们应该都知道用text-overflow:ellipsis属性来，当然还需要加宽度width属来兼容部分浏览。">
+<meta name="keywords" content="CSS3,CSS,HTML5,单行显示">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS实现单行、多行文本溢出显示省略号（…）">
+<meta property="og:url" content="https://lovexinforever.github.io/2017/09/14/CSS实现单行、多行文本溢出显示省略号（…）/index.html">
 <meta property="og:site_name" content="总有刁民想害朕~">
-<meta property="og:description" content="一个简简单单的程序猿">
+<meta property="og:description" content="如果实现单行文本的溢出显示省略号同学们应该都知道用text-overflow:ellipsis属性来，当然还需要加宽度width属来兼容部分浏览。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://obqo5zeui.bkt.clouddn.com/QQ20170914-170831@2x.png">
+<meta property="og:image" content="http://obqo5zeui.bkt.clouddn.com/QQ20170914-171043@2x.png">
 <meta property="og:updated_time" content="2017-09-14T09:15:34.683Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于我">
-<meta name="twitter:description" content="一个简简单单的程序猿">
+<meta name="twitter:title" content="CSS实现单行、多行文本溢出显示省略号（…）">
+<meta name="twitter:description" content="如果实现单行文本的溢出显示省略号同学们应该都知道用text-overflow:ellipsis属性来，当然还需要加宽度width属来兼容部分浏览。">
+<meta name="twitter:image" content="http://obqo5zeui.bkt.clouddn.com/QQ20170914-170831@2x.png">
 
 
 
@@ -117,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://lovexinforever.github.io/about/"/>
+  <link rel="canonical" href="https://lovexinforever.github.io/2017/09/14/CSS实现单行、多行文本溢出显示省略号（…）/"/>
 
 
 
 
 
-  <title>关于我 | 总有刁民想害朕~</title>
+  <title>CSS实现单行、多行文本溢出显示省略号（…） | 总有刁民想害朕~</title>
   
 
 
@@ -296,33 +300,273 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lovexinforever.github.io/2017/09/14/CSS实现单行、多行文本溢出显示省略号（…）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="总有刁民想害朕">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/default_avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="总有刁民想害朕~">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h2 class="post-title" itemprop="name headline">关于我</h2>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <h3 id="一个简简单单的程序猿"><a href="#一个简简单单的程序猿" class="headerlink" title="一个简简单单的程序猿"></a>一个简简单单的程序猿</h3>
+          <h2 class="post-title" itemprop="name headline">CSS实现单行、多行文本溢出显示省略号（…）</h2>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-14T17:00:00+00:00">
+                2017-09-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/HTML5/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML5</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/HTML5/CSS3/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS3</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  142
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+        
+
+
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>如果实现单行文本的溢出显示省略号同学们应该都知道用text-overflow:ellipsis属性来，当然还需要加宽度width属来兼容部分浏览。<br><a id="more"></a></p>
+<h2 id="单行显示"><a href="#单行显示" class="headerlink" title="单行显示"></a>单行显示</h2><h3 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.singer</span> &#123;</div><div class="line">           <span class="attribute">overflow</span>: hidden;</div><div class="line">           <span class="attribute">text-overflow</span>: ellipsis;</div><div class="line">           <span class="attribute">white-space</span>: nowrap;</div><div class="line">       &#125;</div></pre></td></tr></table></figure>
+<h3 id="效果如图"><a href="#效果如图" class="headerlink" title="效果如图"></a>效果如图</h3><p><img src="http://obqo5zeui.bkt.clouddn.com/QQ20170914-170831@2x.png"></p>
+<p>但是这个属性只支持单行文本的溢出显示省略号，如果我们要实现多行文本溢出显示省略号呢。</p>
+<h2 id="多行显示"><a href="#多行显示" class="headerlink" title="多行显示"></a>多行显示</h2><h3 id="实现方法-1"><a href="#实现方法-1" class="headerlink" title="实现方法"></a>实现方法</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.multiline</span> &#123;</div><div class="line">           <span class="attribute">margin-top</span>: <span class="number">20px</span>;</div><div class="line">           <span class="attribute">display</span>: -webkit-box;</div><div class="line">           <span class="attribute">-webkit-box-orient</span>: vertical;</div><div class="line">           <span class="attribute">-webkit-line-clamp</span>: <span class="number">3</span>;</div><div class="line">           <span class="attribute">overflow</span>: hidden;</div><div class="line">           <span class="attribute">width</span>: <span class="number">300px</span>;</div><div class="line">       &#125;</div></pre></td></tr></table></figure>
+<h3 id="效果如图-1"><a href="#效果如图-1" class="headerlink" title="效果如图"></a>效果如图</h3><p><img src="http://obqo5zeui.bkt.clouddn.com/QQ20170914-171043@2x.png"></p>
+
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixinpay.jpeg" alt="总有刁民想害朕 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpeg" alt="总有刁民想害朕 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS3/" rel="tag"># CSS3</a>
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+            <a href="/tags/HTML5/" rel="tag"># HTML5</a>
+          
+            <a href="/tags/单行显示/" rel="tag"># 单行显示</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/14/js-正则判断是否是手机号/" rel="next" title="js 正则判断是否是手机号">
+                <i class="fa fa-chevron-left"></i> js 正则判断是否是手机号
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -462,7 +706,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一个简简单单的程序猿"><span class="nav-number">1.</span> <span class="nav-text">一个简简单单的程序猿</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#单行显示"><span class="nav-number">1.</span> <span class="nav-text">单行显示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现方法"><span class="nav-number">1.1.</span> <span class="nav-text">实现方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果如图"><span class="nav-number">1.2.</span> <span class="nav-text">效果如图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多行显示"><span class="nav-number">2.</span> <span class="nav-text">多行显示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现方法-1"><span class="nav-number">2.1.</span> <span class="nav-text">实现方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果如图-1"><span class="nav-number">2.2.</span> <span class="nav-text">效果如图</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -597,6 +841,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -684,6 +932,23 @@
 
 
   
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 7017,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
 
   
   
