@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lovexinforever.github.io/photos/index.html</loc>
+    
+    <lastmod>2017-09-18T05:24:35.016Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://lovexinforever.github.io/2017/09/18/Hexo-NexT-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%9B%B8%E5%86%8C-%E4%B8%80/</loc>
     
-    <lastmod>2017-09-18T04:55:20.431Z</lastmod>
+    <lastmod>2017-09-18T04:53:40.000Z</lastmod>
     
   </url>
   
@@ -12,13 +19,6 @@
     <loc>https://lovexinforever.github.io/photos/data.json</loc>
     
     <lastmod>2017-09-18T04:47:57.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lovexinforever.github.io/photos/index.html</loc>
-    
-    <lastmod>2017-09-18T02:06:34.000Z</lastmod>
     
   </url>
   
