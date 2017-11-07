@@ -4,8 +4,40 @@
 
     
   <url>
+    <loc>https://lovexinforever.github.io/2017/09/27/jQuery%E9%80%89%E6%8B%A9%E5%99%A8%E5%92%8C%E9%80%89%E5%8F%96%E6%96%B9%E6%B3%95-%E4%BA%8C/</loc>
+    <lastmod>2017-11-07T06:01:56.750Z</lastmod>
+    <data>
+        <display>
+        <title>jQuery选择器和选取方法(二)</title>
+        <pubTime>2017-09-27T14:17:23.000Z</pubTime>
+        
+        <tag>HTML5</tag>
+         
+        <tag>js</tag>
+         
+        <tag>JQuery</tag>
+         
+        <tag>选择器</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://lovexinforever.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+             
+              <breadCrumb title="HTML5" url="https://lovexinforever.github.io/categories/%E6%8A%80%E6%9C%AF/HTML5/"/>
+          
+             
+              <breadCrumb title="JS" url="https://lovexinforever.github.io/categories/%E6%8A%80%E6%9C%AF/HTML5/JS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://lovexinforever.github.io/2017/09/18/Hexo-NexT-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%9B%B8%E5%86%8C-%E4%B8%80/</loc>
-    <lastmod>2017-11-07T03:16:33.075Z</lastmod>
+    <lastmod>2017-11-07T06:01:56.750Z</lastmod>
     <data>
         <display>
         <title>Hexo+NexT 博客搭建相册(一)</title>
@@ -34,7 +66,7 @@
     
   <url>
     <loc>https://lovexinforever.github.io/2017/09/18/Hexo-NexT-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%9B%B8%E5%86%8C-%E4%BA%8C/</loc>
-    <lastmod>2017-11-07T03:16:33.075Z</lastmod>
+    <lastmod>2017-11-07T06:01:56.750Z</lastmod>
     <data>
         <display>
         <title>Hexo+NexT 博客搭建相册(二)</title>
@@ -63,7 +95,7 @@
     
   <url>
     <loc>https://lovexinforever.github.io/2017/09/26/jQuery%E9%80%89%E6%8B%A9%E5%99%A8%E5%92%8C%E9%80%89%E5%8F%96%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2017-11-07T03:16:33.075Z</lastmod>
+    <lastmod>2017-11-07T06:01:56.750Z</lastmod>
     <data>
         <display>
         <title>jQuery选择器和选取方法(一)</title>
@@ -143,38 +175,6 @@
           
              
               <breadCrumb title="魔方" url="https://lovexinforever.github.io/categories/%E5%A8%B1%E4%B9%90/%E9%AD%94%E6%96%B9/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://lovexinforever.github.io/2017/09/27/jQuery%E9%80%89%E6%8B%A9%E5%99%A8%E5%92%8C%E9%80%89%E5%8F%96%E6%96%B9%E6%B3%95-%E4%BA%8C/</loc>
-    <lastmod>2017-10-25T05:47:43.000Z</lastmod>
-    <data>
-        <display>
-        <title>jQuery选择器和选取方法(二)</title>
-        <pubTime>2017-09-27T06:17:23.000Z</pubTime>
-        
-        <tag>HTML5</tag>
-         
-        <tag>js</tag>
-         
-        <tag>JQuery</tag>
-         
-        <tag>选择器</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://lovexinforever.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-             
-              <breadCrumb title="HTML5" url="https://lovexinforever.github.io/categories/%E6%8A%80%E6%9C%AF/HTML5/"/>
-          
-             
-              <breadCrumb title="JS" url="https://lovexinforever.github.io/categories/%E6%8A%80%E6%9C%AF/HTML5/JS/"/>
           
         </display>
     </data>
