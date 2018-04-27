@@ -244,18 +244,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hexo博客添加文章置顶功能]]></title>
-    <url>%2F2017%2F09%2F13%2FHexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E7%BD%AE%E9%A1%B6%E5%8A%9F%E8%83%BD%2F</url>
-    <content type="text"><![CDATA[原来用的WordPress，直接很方便地管理置顶文章，Hexo只提供了按发布日期的排序，只好网上找了些资料修改。 原理：在Hexo生成首页HTML时，将top值高的文章排在前面，达到置顶功能。修改Hexo文件夹下的node_modules/hexo-generator-index/lib/generator.js，在生成文章之前进行文章top值排序。 需添加的代码：12345678910111213posts.data = posts.data.sort(function(a, b) &#123; if(a.top &amp;&amp; b.top) &#123; // 两篇文章top都有定义 if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排 else return b.top - a.top; // 否则按照top值降序排 &#125; else if(a.top &amp;&amp; !b.top) &#123; // 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233） return -1; &#125; else if(!a.top &amp;&amp; b.top) &#123; return 1; &#125; else return b.date - a.date; // 都没定义按照文章日期降序排&#125;); 修改完成后，只需要在front-matter中设置需要置顶文章的top值，将会根据top值大小来选择置顶顺序top值越大越靠前。需要注意的是，这个文件不是主题的一部分，也不是Git管理的，备份的时候比较容易忽略。 以下是最终的generator.js内容12345678910111213141516171819202122232425262728'use strict';var pagination = require('hexo-pagination');module.exports = function(locals)&#123; var config = this.config; var posts = locals.posts; posts.data = posts.data.sort(function(a, b) &#123; if(a.top &amp;&amp; b.top) &#123; if(a.top == b.top) return b.date - a.date; else return b.top - a.top; &#125; else if(a.top &amp;&amp; !b.top) &#123; return -1; &#125; else if(!a.top &amp;&amp; b.top) &#123; return 1; &#125; else return b.date - a.date; &#125;); var paginationDir = config.pagination_dir || 'page'; return pagination('', posts, &#123; perPage: config.index_generator.per_page, layout: ['index', 'archive'], format: paginationDir + '/%d/', data: &#123; __index: true &#125; &#125;);&#125;;]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>置顶</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Hexo的版本控制与持续集成]]></title>
     <url>%2F2017%2F09%2F13%2FHexo%E7%9A%84%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%2F</url>
     <content type="text"><![CDATA[人生并不像火车要通过每个站似的经过每一个生活阶段。人生总是直向前行走，从不留下什么。—— 刘易斯想必很多人会把Hexo生成出来的静态网站放到GitHub Pages来进行托管。一般发布Hexo博客的流程是，首先在本地搭建Hexo的环境，编写新文章，然后利用hexo deploy来发布到Git。那么对于本地的Hexo的原始文件怎么管理呢？如果换电脑了怎么办？如果没有对原始文件进行备份，突然有一天你的本地环境挂了导致源文件丢失，那不就呵呵了。也许你会想到用Dropbox或者其他方案来对源文件进行备份，但是每次更新完博客，需要备份好源文件，然后执行hexo deploy进行发布，是不是很麻烦？换了电脑之后又要重新搭建本地环境，是不是很蛋疼？那么接下来我们就来说说如何优雅愉快地对我们的Hexo进行版本管理和发布。既然我们已经用了GitHub来托管我们生成出来的静态网站，那么为什么不也把Hexo博客的源文件也host在GitHub上呢。那么问题来了，如果我们把Hexo博客的源文件托管在GitHub上，我们的发布流程就会变为： 执行git push把更新的源文件push到托管源文件的GitHub Repo (我们称之为Source Repo) 执行hexo deploy来更新托管静态网站的GitHub Pages (我们称之为Content Repo) 这样看来，每次更新博客要经历两个步骤，并不是那么straightforward。那么有没有办法做到既能使用GitHub进行版本控制，又能做到一键发布呢？答案是肯定的。这里用到了持续集成也就是我们一直所说的CI来完成一键发布：当有新的change push到Source Repo时，自动执行CI脚本，生成最新的静态网站发布到Content Repo，一气呵成。那么我使用什么CI工具来做呢？我们可以使用像Travis CI这样的Hosted CI Service，也可以使用Jenkins或者TeamCity来搭建CI server。如果自己来搭建CI Server，费时费力，又要花钱来买Server来host CI service，肯定不是一个很好的选择。那么我们选哪个Hosted CI Service呢？其实今年在公司的一个项目中我们就选择了AppVeyor。当初在做investigation的时候，第一个想到的就是用Travis CI，访问AppVeyor官网，映入眼帘的大标题就是#1 Continuous Delivery service for Windows。刚开始的时候内心一阵嘲笑，Top 10的CI Service就你支持Windows，你不是第一那谁是第一？结果在之后的项目使用中，发现AppVeyor比Travis CI好用太多。这里就不具体展开了，继续进入正题。使用AppVeyor来建立CI非常方便，主要是以下步骤： 注册并登陆 AppVeyor访问AppVeyor登陆页面，使用你的GitHub账号登陆即可。 添加 Project在AppVeyor Projects页面，添加相应的GitHub Source Repo。 添加appveyor.yml到Source Repo接下来，你需要把appveyor.yml添加到Source Repo的根目录下。具体的appveyor.yml如下.也可以参考我的博客AppVeyor.yml 你唯一需要做的就是替换[Your GitHub Access Token]，关于生成Access Token，可以参考这篇文章。在GitHub生成好Access Token之后，你需要到AppVeyor加密页面把Access Token加密之后再替换[Your GitHub Access Token] 设置Appveyor添加好appveyor.yml之后，再到Appveyor portal设置以下四个变量。STATIC_SITE_REPO就是Content Repo的地址，TARGET_BRANCH就是你Content Repo的branch，一般默认就是master，GIT_USER_EMAIL和GIT_USER_NAME就是你GitHub账号的信息。 好了，一切大功告成！试一下git push你的change到Source Repo，几分钟内，你的博客就自动更新了！背后的过程如下: Git push to Source Repo AppVeyor CI Update GitHub Pages Content Repo Generate your Hexo blog site 谢谢!]]></content>
@@ -268,6 +256,18 @@
         <tag>CI</tag>
         <tag>AppVeyor</tag>
         <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo博客添加文章置顶功能]]></title>
+    <url>%2F2017%2F09%2F13%2FHexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E7%BD%AE%E9%A1%B6%E5%8A%9F%E8%83%BD%2F</url>
+    <content type="text"><![CDATA[原来用的WordPress，直接很方便地管理置顶文章，Hexo只提供了按发布日期的排序，只好网上找了些资料修改。 原理：在Hexo生成首页HTML时，将top值高的文章排在前面，达到置顶功能。修改Hexo文件夹下的node_modules/hexo-generator-index/lib/generator.js，在生成文章之前进行文章top值排序。 需添加的代码：12345678910111213posts.data = posts.data.sort(function(a, b) &#123; if(a.top &amp;&amp; b.top) &#123; // 两篇文章top都有定义 if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排 else return b.top - a.top; // 否则按照top值降序排 &#125; else if(a.top &amp;&amp; !b.top) &#123; // 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233） return -1; &#125; else if(!a.top &amp;&amp; b.top) &#123; return 1; &#125; else return b.date - a.date; // 都没定义按照文章日期降序排&#125;); 修改完成后，只需要在front-matter中设置需要置顶文章的top值，将会根据top值大小来选择置顶顺序top值越大越靠前。需要注意的是，这个文件不是主题的一部分，也不是Git管理的，备份的时候比较容易忽略。 以下是最终的generator.js内容12345678910111213141516171819202122232425262728'use strict';var pagination = require('hexo-pagination');module.exports = function(locals)&#123; var config = this.config; var posts = locals.posts; posts.data = posts.data.sort(function(a, b) &#123; if(a.top &amp;&amp; b.top) &#123; if(a.top == b.top) return b.date - a.date; else return b.top - a.top; &#125; else if(a.top &amp;&amp; !b.top) &#123; return -1; &#125; else if(!a.top &amp;&amp; b.top) &#123; return 1; &#125; else return b.date - a.date; &#125;); var paginationDir = config.pagination_dir || 'page'; return pagination('', posts, &#123; perPage: config.index_generator.per_page, layout: ['index', 'archive'], format: paginationDir + '/%d/', data: &#123; __index: true &#125; &#125;);&#125;;]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>置顶</tag>
       </tags>
   </entry>
   <entry>
