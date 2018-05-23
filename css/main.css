@@ -1984,7 +1984,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff505c;
+  background: #41ff28;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2598,7 +2598,7 @@ pre .javascript .function {
   padding-bottom: 20px;
   padding-top: 20px;
   border-radius: 20px;
-  box-shadow: 0 0 20px #bbe;
+  box-shadow: 0 0 20px #ff6347;
 }
 #schedule ul#event-list li.event h2.event-summary {
   margin: 0;
