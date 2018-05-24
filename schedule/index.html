@@ -109,7 +109,7 @@
 <meta property="og:site_name" content="总有刁民想害朕~">
 <meta property="og:description" content="会当凌绝顶">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-23T09:59:30.935Z">
+<meta property="og:updated_time" content="2018-05-24T02:13:21.514Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的行程">
 <meta name="twitter:description" content="会当凌绝顶">
@@ -1201,9 +1201,15 @@ function buildEventDOM(tense, event) {
   h2Close               = `</h2>`;
 
   locationDOM     = "";
+  descriptionDOM  = "";
   if (showLocation && event['location']) {
     locationDOM   = `<span class="event-location event-details">
                       ${event['location']}
+                     </span>`;
+  }
+  if (event['description']) {
+    descriptionDOM   = `<span class="event-description event-details">
+                      ${event['description']}
                      </span>`;
   }
   relativeTimeDOM = `<span class="event-relative-time">
@@ -1219,6 +1225,7 @@ function buildEventDOM(tense, event) {
         event['summary'] +
         relativeTimeDOM+
       h2Close +
+      descriptionDOM +
       locationDOM +
       durationDOM +
     liClose;

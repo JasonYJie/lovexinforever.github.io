@@ -1984,7 +1984,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #41ff28;
+  background: #d2ff9d;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2643,6 +2643,9 @@ pre .javascript .function {
 }
 #schedule ul#event-list li.event span.event-details.event-duration:before {
   content: '\f017';
+}
+#schedule ul#event-list li.event span.event-details.event-description:before {
+  content: '\f028';
 }
 #schedule ul#event-list li.event-past {
   background: #fcfcfc;
