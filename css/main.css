@@ -1454,7 +1454,7 @@ pre .javascript .function {
   display: none;
 }
 .posts-collapse .post-title {
-  margin-left: 60px;
+  margin-left: 70px;
   font-size: 16px;
   font-weight: normal;
   line-height: inherit;
@@ -2021,7 +2021,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #baff5b;
+  background: #ff71b6;
 }
 .links-of-blogroll {
   font-size: 13px;
